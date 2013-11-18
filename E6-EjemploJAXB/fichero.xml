@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Clase>
+	<Alumno>
+		<Nombre>Alberto</Nombre>
+		<Provincia>Madrid</Provincia>
+	</Alumno>
+	<Alumno>
+		<Nombre>José Luis</Nombre>
+		<Provincia>Barcelona</Provincia>
+	</Alumno>
+</Clase>

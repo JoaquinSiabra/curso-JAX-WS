@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Este WSDL lo hemos hecho a mano--><definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://pservicioreverso/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://pservicioreverso/" name="ServicioReversoCService">
+<types>
+	<xs:schema xmlns:tns="http://pservicioreverso/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://pservicioreverso/">
+	  <xs:element name="getReverso" type="tns:getReverso"/>
+	  <xs:element name="getReversoResponse" type="tns:getReversoResponse"/>
+	  <xs:complexType name="getReverso">
+	    <xs:sequence>
+	      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+	    </xs:sequence>
+	  </xs:complexType>
+	  <xs:complexType name="getReversoResponse">
+	    <xs:sequence>
+	      <xs:element name="return" type="xs:string" minOccurs="0"/>
+	    </xs:sequence>
+	  </xs:complexType>
+	</xs:schema>
+</types>
+<message name="getReverso">
+<part name="parameters" element="tns:getReverso"/>
+</message>
+<message name="getReversoResponse">
+<part name="parameters" element="tns:getReversoResponse"/>
+</message>
+<portType name="ServicioReverso">
+<operation name="getReverso">
+<input message="tns:getReverso"/>
+<output message="tns:getReversoResponse"/>
+</operation>
+</portType>
+<binding name="ServicioReversoCPortBinding" type="tns:ServicioReverso">
+<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="getReverso">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+</binding>
+<service name="ServicioReversoCService">
+<port name="ServicioReversoCPort" binding="tns:ServicioReversoCPortBinding">
+<soap:address location="http://localhost:7001/Ejercicio5/ServicioReversoCService"/>
+</port>
+</service>
+</definitions>

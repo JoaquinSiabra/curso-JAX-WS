@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<project name="GeneracionJAXB" default="GenerarJAXB" basedir=".">
+	
+  <property name="fuentes.dir" location="${basedir}/src"/>
+  <property name="paquetedestino" value="pclase"/>
+  <property name="schema" value="esquemaClase.xsd"/>
+  <property name="xjc" value="C:\CursoWS\Herramientas\Oracle\Middleware\jdk160_29\bin\xjc.exe"/>
+	
+	<target name="GenerarJAXB">
+
+	  <exec executable="${xjc}">
+	  	<!-- Directorio para compilados -->
+	  	<arg value="-d"/>
+	  	<arg value="${fuentes.dir}"/>
+	  	<!-- Paquete destino -->
+      <arg value="-p"/>
+	    <arg value="${paquetedestino}"/>
+	  	<!-- Muestra mensajes durante la generación -->
+	  	<arg value="-verbose"/>
+	  	<!-- Schema -->
+      <arg value="${schema}"/>
+		</exec>
+		
+	</target>
+	
+</project>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<project name="GeneracionServicio" default="GenerarServicio" basedir=".">
+	
+	<!-- OJO. Si cambia la ubicación del WSDL hay que actualizar el valor de la propiedad, y el archivo de customización de bindings de JAXB (GeneracionClienteClasesProxyDelServicio_JAXBCustomBindings.xml) -->
+	<property name="UbicacionWSDL" value="http://localhost:7001/Ejercicio3/ServicioReversoFromJavaService?wsdl"/>
+  <property name="fuentes.dir" location="${basedir}/src"/>
+  <property name="compilados.dir" value="${basedir}/build"/>
+  <property name="paquetedestino" value="pservicioreverso"/>
+	<property name="wsImport" value="C:\CursoWS\Herramientas\Oracle\Middleware\jdk160_29\bin\wsimport.exe"/>
+	
+	<target name="GenerarServicio">
+
+	  <exec executable="${wsImport}">
+	  	<!-- WSDL -->
+	  	<arg value="${UbicacionWSDL}"/>
+      <arg value="-keep"/>
+      <!-- Proxy -->
+      <arg value="-httpproxy:galeon.central.sepg.minhac.age:8080"/>
+      <!-- Directorio para fuentes -->
+      <arg value="-s"/>
+      <arg value="${fuentes.dir}"/>
+	  	<!-- Directorio para compilados -->
+	  	<arg value="-d"/>
+	  	<arg value="${compilados.dir}"/>
+	  	<!-- Paquete destino -->
+      <arg value="-p"/>
+	    <arg value="${paquetedestino}"/>
+      <!-- Solicita no compilar las clases generadas -->
+      <arg value="-Xnocompile"/>
+	  	<!-- Muestra mensajes durante la generación -->
+	  	<arg value="-verbose"/>
+	  	<!-- WSDL -->
+	  	<arg value="-wsdllocation"/>
+      <arg value="${UbicacionWSDL}"/>
+		</exec>
+		
+	</target>
+	
+</project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Raiz xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="envio.xsd">
+	<Cabecera>
+		<NumCOE>02160001</NumCOE>
+		<Anualidad>2009</Anualidad>
+		<FechaEnvio>15/10/2009</FechaEnvio>
+	</Cabecera>
+	<DocumentoContable>
+		<Cabecera>
+			<NumOficinaContable>00160</NumOficinaContable>
+			<NumCOE>0216001</NumCOE>
+			<Ejercicio>2009</Ejercicio>
+			<NumIdTelcon>0000000000421</NumIdTelcon>
+			<NumAplicaciones>2</NumAplicaciones>
+			<CodigoMC>080</CodigoMC>
+			<DigitoSigno>0</DigitoSigno>
+		</Cabecera>
+		<Cuerpo>
+			<NumExpediente>65</NumExpediente>
+			<Seccion>15</Seccion>
+			<Modificaciones>
+				<Modificacion>
+					<Servicio>014</Servicio>
+					<PorPrograma>931N</PorPrograma>
+					<Economica>100</Economica>
+					<CodModificacion>75</CodModificacion>
+					<Importe>2800</Importe>
+				</Modificacion>
+				<Modificacion>
+					<Servicio>014</Servicio>
+					<PorPrograma>931N</PorPrograma>
+					<Economica>120</Economica>
+					<CodModificacion>75</CodModificacion>
+					<Importe>3300</Importe>
+				</Modificacion>
+				<ImporteTotal>6100</ImporteTotal>
+			</Modificaciones>
+		</Cuerpo>
+	</DocumentoContable>
+</Raiz>

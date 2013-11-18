@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by IGAE Intervención Gral. de la Admón. Del Estado (IGAE Intervención Gral. de la Admón. Del Estado) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Raiz">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Cabecera">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="NumCOE"/>
+							<xs:element name="Anualidad"/>
+							<xs:element name="FechaEnvio"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DocumentoContable">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Cabecera">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NumOficinaContable"/>
+										<xs:element name="NumCOE"/>
+										<xs:element name="Ejercicio"/>
+										<xs:element name="NumIdTelcon"/>
+										<xs:element name="NumAplicaciones"/>
+										<xs:element name="CodigoMC"/>
+										<xs:element name="DigitoSigno"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Cuerpo">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NumExpediente"/>
+										<xs:element name="Seccion"/>
+										<xs:element name="Modificaciones">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:sequence maxOccurs="unbounded">
+														<xs:element name="Modificacion">
+															<xs:complexType>
+																<xs:sequence>
+																	<xs:element name="Servicio"/>
+																	<xs:element name="PorPrograma"/>
+																	<xs:element name="Economica"/>
+																	<xs:element name="CodModificacion"/>
+																	<xs:element name="Importe"/>
+																</xs:sequence>
+															</xs:complexType>
+														</xs:element>
+													</xs:sequence>
+													<xs:element name="ImporteTotal"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
